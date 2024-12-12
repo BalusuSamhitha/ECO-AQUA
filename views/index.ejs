@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water Testing - Home</title>
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    .container {
+      display: flex;
+      flex-direction: column; /* Stack items vertically */
+      align-items: center;
+      padding: 20px;
+    }
+    
+    .hero {
+      text-align: center; /* Center the text inside the hero */
+      margin-bottom: 20px; /* Add space between hero and images */
+    }
+    
+    .rotating-images {
+      display: flex;
+      justify-content: center;
+      gap: 20px; /* Space between the images */
+    }
+    
+    .rotating-images img {
+      width: 120px; /* Adjust the width */
+      height: 120px; /* Adjust the height */
+      border-radius: 50%;
+      border: 3px solid #ccc;
+      animation: rotate 15s linear infinite;
+      object-fit: cover; /* Ensures the image fits within the circle */
+    }
+    
+    nav ul li a:hover {
+      background-color: #003366;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #00a7cc;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      min-width: 200px;
+      z-index: 1;
+      padding: 0;
+      margin: 0;
+      border-radius: 5px;
+      top: 100%; /* Positions the dropdown below the parent */
+      left: 0;
+    }
+
+    .dropdown-content a {
+      color: white;
+      padding: 10px 15px;
+      display: block;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .dropdown-content a:hover {
+      background-color: #004d99;
+    }
+
+    nav ul li:hover .dropdown-content {
+      display: block; /* Show dropdown on hover */
+    }
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    
+    
+</style>
+</head>
+
+<body>
+  <header>
+    <h1 class="site-title" style="font-size: 40px;">ECO AQUA</h1>
+    <nav>
+      <ul>
+        <li><a href="/">🏠 Home</a></li>
+        <li><a href="/sensors">🧪 Sensors</a></li>
+        <li class="dropdown">
+          <a href="/parameters">💧 Water Parameters</a>
+          <div class="dropdown-content">
+            <a href="/parameters">Drinking</a>
+            <a href="/parameters/turbidity">Agriculture</a>
+            <a href="/parameters/hardness">Construction</a>
+            <a href="/parameters/chlorine">Electricity</a>
+            <a href="/parameters/temperature">Domestic Usage</a>
+            <a href="/parameters/industry">Industry</a>
+          </div>
+        </li>
+  
+        <li><a href="/standards">📊 Water Quality Standards</a></li>
+        <li><a href="/reports">📋 Water Quality Reports</a></li>
+        <li><a href="/about">ℹ️ About</a></li>
+        <li><a href="javascript:void(0);" onclick="confirmLogout()" class="logout-link">🚶‍♂️ Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="hero">
+        <h2>Ensuring Safe Water, One Test at a Time</h2>
+        <p>Water is essential for life, supporting both our health and the environment. It sustains our bodies, nourishes crops, generates energy, and maintains ecosystems. Clean water is crucial for public health and the survival of countless species. Protecting this vital resource ensures a healthier, more sustainable future for all.</p>
+        <button class="sample-button" onclick="window.location.href='/sample-data'">
+          Collect Sample Data <span class="arrow">▶</span>
+        </button>
+      </section>
+      <div class="rotating-images">
+        <img src="https://virchowprize.org/wp-content/uploads/2021/09/sdg3-circle.png" alt="Image 3">
+        <img src="https://www.kwrwater.nl/wp-content/uploads/2019/08/SDG6-weel.png" alt="Image 6">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXXbMRGPuLmenzSqHWiZVvAKZnO20h3060HNvGAy-3smB3fP_fsJFySOujirVTbJNIKkM&usqp=CAU" alt="Image 12">
+        <img src="https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41598-023-47746-w/MediaObjects/41598_2023_47746_Fig1_HTML.png" alt="Image 13">
+      </div>
+    </div>
+    
+    <div class="know-more">
+      <a href="/more-details" class="know-more-button">
+        <span class="arrow">▶</span>
+      </a>
+      <div class="know-more-text">Buy Now</div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Water Testing Service. All rights reserved.</p>
+    <p>Contact us at <a href="mailto:info@watertesting.com">info@watertesting.com</a></p>
+  </footer>
+
+  <script>
+    function toggleDetails() {
+      const details = document.getElementById('sample-details');
+      const arrows = document.querySelectorAll('.arrow');
+
+      if (details.classList.contains('show')) {
+        details.classList.remove('show');
+        arrows.forEach(arrow => arrow.classList.remove('rotate'));
+      } else {
+        details.classList.add('show');
+        arrows.forEach(arrow => arrow.classList.add('rotate'));
+      }
+    }
+    function confirmLogout() {
+        const confirmAction = confirm("Are you sure you want to logout?");
+        if (confirmAction) {
+            window.location.href = "/logout";
+        }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        .about-section {
+            padding: 50px 20px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .about-section .container {
+            max-width: 1000px; /* Increased width to fit content better */
+            margin: auto;
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            gap: 20px; 
+            flex-wrap: wrap; 
+        }
+
+        .about-section h1 {
+            font-size: 36px;
+            color: #00a7cc;
+            margin-bottom: 20px;
+            text-align: left; /* Align text to the left */
+        }
+
+        .about-section p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #555;
+            text-align: left; /* Align text to the left */
+        }
+
+        /* Image styling with enhanced elevation */
+        .about-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 15px; /* Rounded edges */
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2), 0 15px 30px rgba(0, 0, 0, 0.15); /* Enhanced elevation effect */
+            transition: box-shadow 0.3s ease; /* Smooth transition for shadow effect */
+        }
+
+        /* Flex container for text content */
+        .text-content {
+            flex: 1; /* Take up remaining space */
+            max-width: 550px; /* Limit the width of the text content */
+        }
+
+        /* Hover effect for image */
+        .about-image:hover {
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3), 0 20px 40px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column; /* Stack image and text on small screens */
+            }
+
+            .about-image {
+                width: 300px;
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="site-title" style="font-size: 40px;">ECO AQUA</h1>
+        <nav>
+          <ul>
+            <li><a href="/">🏠 Home</a></li>
+            <li><a href="/sensors">🧪 Sensors</a></li>
+            <li class="dropdown">
+              <a href="/parameters">💧 Water Parameters</a>
+              <div class="dropdown-content">
+                <a href="/parameters">Drinking</a>
+                <a href="/parameters/turbidity">Agriculture</a>
+                <a href="/parameters/hardness">Construction</a>
+                <a href="/parameters/chlorine">Electricity</a>
+                <a href="/parameters/temperature">Domestic Usage</a>
+                <a href="/parameters/industry">Industry</a>
+              </div>
+            </li>
+            <li><a href="/standards">📊 Water Quality Standards</a></li>
+            <li><a href="/reports">📋 Water Quality Reports</a></li>
+            <li><a href="/about">ℹ About</a></li>
+            <li><a href="javascript:void(0);" onclick="confirmLogout()" class="logout-link">🚶‍♂️ Logout</a></li>
+          </ul>
+        </nav>
+    </header>
+
+    <section class="about-section">
+        <div class="container">
+            <!-- Text content beside the image -->
+            <div class="text-content">
+                <h1>About Us</h1>
+                <p>Our mission is to ensure clean and safe water for everyone. We specialize in water testing and quality assurance, providing the most accurate and reliable water quality data using advanced sensors and IoT technology.</p>
+                <p>We believe in transparency and strive to provide easy access to water quality reports, helping communities make informed decisions about their water resources.</p>
+                <p>Our team of experts is dedicated to continuously improving our technologies and services to meet the growing challenges of water safety worldwide.</p>
+            </div>
+
+            <!-- Image with rounded edges and enhanced elevation effect -->
+            <img src="eco.jpg" alt="About Image" class="about-image">
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Water Testing Service. All rights reserved.</p>
+        <p>Contact us at <a href="mailto:info@watertesting.com">info@watertesting.com</a></p>
+    </footer>
+    <script> 
+    function confirmLogout() {
+        const confirmAction = confirm("Are you sure you want to logout?");
+        if (confirmAction) {
+            window.location.href = "/logout";
+        }
+    }</script>
+</body>
+</html>

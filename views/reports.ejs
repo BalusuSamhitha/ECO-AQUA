@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water Testing - Water Quality Reports</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1 class="site-title" style="font-size: 40px;">ECO AQUA</h1>
+    <nav>
+      <ul>
+        <li><a href="/">🏠 Home</a></li>
+        <li><a href="/sensors">🧪 Sensors</a></li>
+        <li class="dropdown">
+          <a href="/parameters">💧 Water Parameters</a>
+          <div class="dropdown-content">
+            <a href="/parameters">Drinking</a>
+            <a href="/agriculture">Agriculture</a>
+            <a href="/construction">Construction</a>
+            <a href="/domestic">Domestic Usage</a>
+            <a href="/industry">Industry</a>
+          </div>
+        </li>
+        <li><a href="/standards">📊 Water Quality Standards</a></li>
+        <li><a href="/reports">📋 Water Quality Reports</a></li>
+        <li><a href="/about">ℹ️ About</a></li>
+        <li><a href="javascript:void(0);" onclick="confirmLogout()" class="logout-link">🚶‍♂️ Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2 style="font-size: 35px; text-align: center; color: #00a7cc">Water Quality Reports</h2>
+
+    <section>
+      <h3>Sample Report</h3>
+      <p>View a sample water quality report to understand the format and information provided.</p>
+      <a href="/view-reports" target="_blank">View Reports</a>
+    </section>
+
+    <section>
+      <h3>How to Interpret the Report</h3>
+      <p>We guide you on how to interpret the values and results in your water quality report.</p>
+      <ul>
+        <li><strong>pH Value:</strong> Indicates the acidity or alkalinity of the water.</li>
+        <li><strong>Turbidity:</strong> Reflects the clarity of the water.</li>
+        <li><strong>Chlorine Levels:</strong> Shows the amount of residual chlorine in the water.</li>
+        <!-- Add more interpretations as needed -->
+      </ul>
+    </section>
+
+    <section>
+      <h3>Custom Reports</h3>
+      <p>You can request custom reports tailored to your specific needs and water testing requirements.</p>
+      <a href="/request-report">Request a Custom Report</a>
+    </section>
+
+    <section>
+      <h3>Comparison Tools</h3>
+      <p>Use our tools to compare your water quality report against the accepted standards and guidelines.</p>
+      <a href="/comparison-tool">Compare Your Report</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Water Testing Service. All rights reserved.</p>
+    <p>Contact us at info@example.com</p>
+  </footer>
+  <script>
+     function confirmLogout() {
+        const confirmAction = confirm("Are you sure you want to logout?");
+        if (confirmAction) {
+            window.location.href = "/logout";
+        }
+    }
+  </script>
+</body>
+</html>

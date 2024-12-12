@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Now</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        .buy-now-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            text-align: center;
+        }
+
+        .prototype-image {
+            width: 300px;
+            height: 300px;
+            background: url('https://www.perfomatix.com/wp-content/uploads/2019/08/Smart-Water-Meter-Powered-by-IoT-.png') no-repeat center center;
+            background-size: contain;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .buy-now-content {
+            margin-left: 20px;
+        }
+
+        .buy-now-content h1 {
+            font-size: 36px;
+            color: #00a7cc;
+        }
+
+        .buy-now-content p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .buy-now-content button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #00a7cc;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .buy-now-content button:hover {
+            background-color: #0088a0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="site-title" style="font-size: 40px;">ECO AQUA</h1>
+        <nav>
+        <ul>
+        <li><a href="/">🏠 Home</a></li>
+        <li><a href="/sensors">🧪 Sensors</a></li>
+        <li class="dropdown">
+            <a href="/parameters">💧 Water Parameters</a>
+            <div class="dropdown-content">
+              <a href="/parameters">Drinking</a>
+              <a href="/parameters/turbidity">Agriculture</a>
+              <a href="/parameters/hardness">Construction</a>
+              <a href="/parameters/chlorine">Electricity</a>
+              <a href="/parameters/temperature">Domestic Usage</a>
+              <a href="/parameters/industry">Industry</a>
+            </div>
+          </li>
+        <li><a href="/standards">📊 Water Quality Standards</a></li>
+        <li><a href="/reports">📋 Water Quality Reports</a></li>
+        <li><a href="/about">ℹ️ About</a></li>
+        <li><a href="javascript:void(0);" onclick="confirmLogout()" class="logout-link">🚶‍♂️ Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="buy-now-section">
+        <div class="prototype-image"></div>
+        <div class="buy-now-content">
+            <h1>Purchase Our Water Testing Device</h1>
+            <button>Buy Now</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Water Testing Service. All rights reserved.</p>
+        <p>Contact us at <a href="mailto:info@watertesting.com">info@watertesting.com</a></p>
+    </footer>
+    <script>
+         function confirmLogout() {
+        const confirmAction = confirm("Are you sure you want to logout?");
+        if (confirmAction) {
+            window.location.href = "/logout";
+        }
+    }
+    </script>
+</body>
+</html>

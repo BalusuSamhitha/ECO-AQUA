@@ -1,0 +1,400 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #00a7cc;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: black;
+    text-align: center;
+}
+/* Navbar styles */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3Spx 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-left: 7%;
+  padding: 0px;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: #00a7cc;
+  color: #ffffff;
+}
+
+nav ul li::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  background-color: #ffffff;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.3s;
+}
+
+nav ul li:hover::after {
+  width: 100%;
+}
+
+nav ul li a:hover {
+  background-color: #003366;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #00a7cc;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  min-width: 200px;
+  z-index: 1;
+  padding: 0;
+  margin: 0;
+  border-radius: 5px;
+  top: 100%; /* Positions the dropdown below the parent */
+  left: 0;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 10px 15px;
+  display: block;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dropdown-content a:hover {
+  background-color: #004d99;
+}
+
+nav ul li:hover .dropdown-content {
+  display: block; /* Show dropdown on hover */
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+nav ul li a::before {
+  margin-right: 5px;
+  font-size: 1.2em; 
+}
+nav h1 {
+  font-size: 2em;
+  color: white;
+  margin: 0;
+}
+
+nav .site-title {
+  font-size: 2.5em;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+}
+
+nav .site-title:hover {
+  color: #00a7cc;
+  transition: color 0.3s;
+}
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 50px; /* Adjust the size as needed */
+  height: auto;
+  margin-right: 10px; /* Space between logo and title */
+}
+
+.site-title {
+  font-size: 2.5em;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    padding-bottom: 120px;
+}
+
+.hero {
+    background: url('/images/water-hero.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    margin: 0 0 20px;
+    color: #00a7cc;
+}
+
+.hero p {
+    font-size: 1.2em;
+    color: black;
+}
+
+section {
+    margin-bottom: 40px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section h3 {
+    margin-top: 0;
+    color: #00a7cc;
+}
+
+section p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+section a {
+    display: inline-block;
+    margin-top: 10px;
+    background-color:#00a7cc;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+section a:hover {
+    background-color: #004d99;
+}
+.sensors {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.sensors {
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s;
+}
+
+.sensors:hover {
+    transform: scale(1.05);
+}
+
+.sensors img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.sensors h3 {
+    margin-top: 10px;
+}
+
+.sensors p {
+    margin: 10px 0;
+}
+
+.sensors .btn {
+    display: inline-block;
+    padding: 10px 15px;
+    color: #fff;
+    background-color: #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.sensors .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+.know-more {
+    position: absolute;
+    bottom: 100px; 
+    right: 20px;   /* Space from the right side */
+    text-align: center;
+    margin-top: 40px; /* Ensure there is space between the button and the hero section */
+  }
+
+  .know-more-button {
+    width: 60px; /* Adjust width for better appearance */
+    height: 60px; /* Adjust height for better appearance */
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 50%; /* Makes the button round */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em; /* Adjust for center alignment */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Remove underline from link */
+  }
+
+  .know-more-button:hover {
+    background-color: #004d99;
+  }
+
+  .know-more-text {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #0066cc;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .sample-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0066cc;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .sample-button:hover {
+    background-color: #004d99;
+  }
+  .arrow {
+    margin-left: 10px;
+    font-size: 1.2em;
+    transition: transform 0.3s ease;
+  }
+
+  .details {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f0f0f0;
+    border-left: 5px solid #0066cc;
+    border-radius: 5px;
+  }
+
+  .details.show {
+    display: block;
+  }
+
+  .rotate {
+    transform: rotate(90deg);
+  }
+  .container {
+    text-align: center;
+    padding: 20px;
+  }
+  .site-title {
+    font-size: 1.5em;
+    color: #0066cc;
+    font-weight: bold;
+  }
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .image-row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .image-row img {
+    width: 200px;
+    height: 200px;
+    border: 2px solid #cccccc;
+    transition: transform 0.5s, box-shadow 0.2s;
+    border-radius: 10px;
+  }
+
+  .image-row img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+
+  .image-row a {
+    margin: 15px;
+  }

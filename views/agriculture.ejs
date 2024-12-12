@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water Testing - Water Parameters</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1 class="site-title" style="font-size: 40px;">ECO AQUA</h1>
+    <nav>
+      <ul>
+        <li><a href="/">🏠 Home</a></li>
+        <li><a href="/sensors">🧪 Sensors</a></li>
+        <li class="dropdown">
+            <a href="/parameters">💧 Water Parameters</a>
+            <div class="dropdown-content">
+              <a href="/parameters">Drinking</a>
+              <a href="/agriculture">Agriculture</a>
+              <a href="/construction">Construction</a>
+              <a href="/domestic">Domestic Usage</a>
+              <a href="/industry">Industry</a>
+            </div>
+          </li>
+        <li><a href="/standards">📊 Water Quality Standards</a></li>
+        <li><a href="/reports">📋 Water Quality Reports</a></li>
+        <li><a href="/about">ℹ About</a></li>
+        <li><a href="javascript:void(0);" onclick="confirmLogout()" class="logout-link">🚶‍♂️ Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2 style="font-size: 35px; text-align: center; color: #00a7cc ">Water Parameters</h2>
+    <section>
+      <h3>EC</h3>
+      <ul>
+        <li>Minimum: 0.3 mS/cm</li>
+        <li>Maximum: 3.0 mS/cm</li>
+        <li>Note: Indicates the water’s ability to conduct electricity, affecting plant growth.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>SG</h3>
+      <ul>
+        <li>Minimum: 1.000</li>
+        <li>Maximum: 1.200</li>
+        <li>Note: Reflects density and potential for concentration issues.</li>
+      </ul>
+    </section>
+    <section>
+      <h3>Salinity</h3>
+      <ul>
+      <li>Minimum: 0.1 g/L</li>
+      <li>Maximum: 10.0 g/L (parts per thousand)</li>
+      <li>Note:  Affects plant water uptake and soil salinity.</li>
+      </ul>
+    </section>
+    <section>
+      <h3>ORP</h3>
+      <ul>
+        <li>Minimum: -100 mV</li>
+        <li>Maximum: 800 mV</li>
+        <li>Note: Measures water’s oxidation-reduction potential, affecting nutrient availability.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>TDS</h3>
+      <ul>
+        <li>Minimum: 200 mg/L (ppm)</li>
+        <li>Maximum: 2000 mg/L (ppm)</li>
+        <li>Note: Affects soil health and nutrient availability.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>pH</h3>
+      <ul>
+        <li>Minimum: 6.0</li>
+        <li>Maximum: 8.5</li>
+        <li>Note:  Impacts nutrient availability and soil pH balance.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Temperature</h3>
+      <ul>
+        <li>Minimum: 5°C</li>
+        <li>Maximum: 40°C</li>
+        <li>Note:  Influences the water’s impact on plant roots and soil conditions.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Water Testing Service. All rights reserved.</p>
+    <p>Contact us at <a href="mailto:info@watertesting.com">info@watertesting.com</a></p>
+  </footer>
+  <script>
+     function confirmLogout() {
+        const confirmAction = confirm("Are you sure you want to logout?");
+        if (confirmAction) {
+            window.location.href = "/logout";
+        }
+    }
+  </script>
+</body>
+</html>

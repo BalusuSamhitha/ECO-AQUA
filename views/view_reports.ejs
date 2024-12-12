@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water Testing - View Report</title>
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    /* Style for the table */
+    table {
+      width: 80%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #00a7cc;
+      color: white;
+    }
+
+    td {
+      background-color: #f9f9f9;
+    }
+
+    /* Style for the download button */
+    .download-button {
+      background-color: #00a7cc;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      display: inline-block;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 class="site-title" style="font-size: 40px;">ECO AQUA</h1>
+    <nav>
+      <ul>
+        <li><a href="/">🏠 Home</a></li>
+        <li><a href="/sensors">🧪 Sensors</a></li>
+        <li class="dropdown">
+          <a href="/parameters">💧 Water Parameters</a>
+          <div class="dropdown-content">
+            <a href="/parameters">Drinking</a>
+            <a href="/agriculture">Agriculture</a>
+            <a href="/construction">Construction</a>
+            <a href="/domestic">Domestic Usage</a>
+            <a href="/industry">Industry</a>
+          </div>
+        </li>
+        <li><a href="/standards">📊 Water Quality Standards</a></li>
+        <li><a href="/reports">📋 Water Quality Reports</a></li>
+        <li><a href="/about">ℹ About</a></li>
+        <li><a href="javascript:void(0);" onclick="confirmLogout()" class="logout-link">🚶‍♂️ Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2 style="font-size: 35px; text-align: center; color: #00a7cc">Water Quality Report</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Value</th>
+          <th>Unit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>pH</td>
+          <td>7.2</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>ORP (Oxidation-Reduction Potential)</td>
+          <td>250</td>
+          <td>mV</td>
+        </tr>
+        <tr>
+          <td>Temperature</td>
+          <td>25</td>
+          <td>°C</td>
+        </tr>
+        <tr>
+          <td>TDS (Total Dissolved Solids)</td>
+          <td>500</td>
+          <td>ppm</td>
+        </tr>
+        <tr>
+          <td>Salinity</td>
+          <td>0.5</td>
+          <td>ppt</td>
+        </tr>
+        <tr>
+          <td>EC (Electrical Conductivity)</td>
+          <td>1000</td>
+          <td>μS/cm</td>
+        </tr>
+        <tr>
+          <td>SG (Specific Gravity)</td>
+          <td>1.002</td>
+          <td>-</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="text-align: center;">
+      <a href="/download-sample-report" class="download-button" download>Download Report</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Water Testing Service. All rights reserved.</p>
+    <p>Contact us at <a href="mailto:info@watertesting.com">info@watertesting.com</a></p>
+  </footer>
+  <script>
+     function confirmLogout() {
+        const confirmAction = confirm("Are you sure you want to logout?");
+        if (confirmAction) {
+            window.location.href = "/logout";
+        }
+    }
+  </script>
+</body>
+</html>

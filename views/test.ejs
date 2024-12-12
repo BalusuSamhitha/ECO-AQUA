@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Water Quality</title>
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    .test-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 30vh;
+    }
+
+    .test-button-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .report-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 40vh;
+      margin-top: 10px;
+      visibility: hidden;
+    }
+
+    .test-button, .report-button {
+      padding: 15px 30px;
+      background-color: #00a7cc;
+      color: white;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .test-button:hover, .report-button:hover {
+      background-color: #004d99;
+    }
+
+    .test-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 15px;
+    }
+
+    .data-display {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+      width: 80%;
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 class="site-title" style="font-size: 40px;">ECO AQUA</h1>
+    <nav>
+      <ul>
+        <li><a href="/">🏠 Home</a></li>
+        <li><a href="/sensors">🧪 Sensors</a></li>
+        <li><a href="/parameters">💧 Water Parameters</a></li>
+        <li><a href="/standards">📊 Water Quality Standards</a></li>
+        <li><a href="/reports">📋 Water Quality Reports</a></li>
+        <li><a href="/about">ℹ️ About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="test-container">
+      <div class="test-button-container">
+        <img src="https://www.shutterstock.com/image-vector/water-analysis-by-business-people-260nw-1881421510.jpg" alt="Test Icon" class="test-image">
+        <button class="test-button" onclick="startTest()">Start Test</button>
+      </div>
+    </div>
+    <div class="report-container" id="report-container">
+      <button class="report-button" onclick="getReport()">Get Report</button>
+    </div>
+    <div class="data-display" id="data-display" style="display: none;">
+      <h3>Test Results:</h3>
+      <pre id="data-content"></pre>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Water Testing Service. All rights reserved.</p>
+    <p>Contact us at <a href="mailto:info@watertesting.com">info@watertesting.com</a></p>
+  </footer>
+
+  <script>
+    function startTest() {
+      fetch('/start-test', { method: 'POST' })
+        .then(response => {
+          if (response.ok) {
+            document.getElementById('report-container').style.visibility = 'visible';
+            alert('Test started. You can now fetch the report.');
+          } else {
+            alert('Failed to start test. Please check the device connection.');
+          }
+        })
+        .catch(error => {
+          console.error('Error starting test:', error);
+          alert('An error occurred while starting the test.');
+        });
+    }
+
+    function getReport() {
+      fetch('/get-report')
+        .then(response => response.json())
+        .then(data => {
+          const dataDisplay = document.getElementById('data-display');
+          const dataContent = document.getElementById('data-content');
+          dataContent.textContent = JSON.stringify(data, null, 2);
+          dataDisplay.style.display = 'block';
+        })
+        .catch(error => {
+          console.error('Error fetching report:', error);
+          alert('An error occurred while fetching the report.');
+        });
+    }
+  </script>
+</body>
+
+</html>

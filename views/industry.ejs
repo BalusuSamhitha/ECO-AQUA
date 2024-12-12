@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water Testing - Water Parameters</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1 class="site-title" style="font-size: 40px;">ECO AQUA</h1>
+    <nav>
+      <ul>
+        <li><a href="/">🏠 Home</a></li>
+        <li><a href="/sensors">🧪 Sensors</a></li>
+        <li class="dropdown">
+          <a href="/parameters">💧 Water Parameters</a>
+          <div class="dropdown-content">
+            <a href="/parameters">Drinking</a>
+            <a href="/agriculture">Agriculture</a>
+            <a href="/construction">Construction</a>
+            <a href="/domestic">Domestic Usage</a>
+            <a href="/industry">Industry</a>
+          </div>
+        </li>
+        <li><a href="/standards">📊 Water Quality Standards</a></li>
+        <li><a href="/reports">📋 Water Quality Reports</a></li>
+        <li><a href="/about">ℹ About</a></li>
+        <li><a href="javascript:void(0);" onclick="confirmLogout()" class="logout-link">🚶‍♂️ Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2 style="font-size: 35px; text-align: center; color: #00a7cc ">Water Parameters</h2>
+    <section>
+      <h3>EC</h3>
+      <ul>
+        <li>Minimum: 0.5 dS/m</li>
+        <li>Maximum: 5.0 dS/m</li>
+        <li>Note: Indicates ion concentration and impacts process operations.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>SG</h3>
+      <ul>
+        <li>Minimum: 1.000</li>
+        <li>Maximum: 1.200</li>
+        <li>Note:  Reflects density and impacts process calculations..</li>
+      </ul>
+    </section>
+    <section>
+      <h3>Salinity</h3>
+      <ul>
+      <li>Minimum: 0.1 g/L</li>
+      <li>Maximum: 35.0 g/L (parts per thousand)</li>
+      <li>Note: Affects corrosion and scaling potential..</li>
+      </ul>
+    </section>
+    <section>
+      <h3>ORP</h3>
+      <ul>
+        <li>Minimum: -100 mV</li>
+        <li>Maximum: 1000 mV</li>
+        <li>Note: Measures the water’s ability to oxidize or reduce substances.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>TDS</h3>
+      <ul>
+        <li>Minimum: 500 mg/L (ppm)</li>
+        <li>Maximum: 2000 mg/L (ppm)</li>
+        <li>Note:  Affects process efficiency and equipment performance.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>pH</h3>
+      <ul>
+        <li>Minimum: 4.0</li>
+        <li>Maximum: 10.0</li>
+        <li>Note:  Affects chemical reactions and equipment longevity.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Temperature</h3>
+      <ul>
+        <li>Minimum: 5°C</li>
+        <li>Maximum: 60°C</li>
+        <li>Note: Influences reaction rates and system efficiency.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Water Testing Service. All rights reserved.</p>
+    <p>Contact us at <a href="mailto:info@watertesting.com">info@watertesting.com</a></p>
+  </footer>
+  <script>
+     function confirmLogout() {
+        const confirmAction = confirm("Are you sure you want to logout?");
+        if (confirmAction) {
+            window.location.href = "/logout";
+        }
+    }
+  </script>
+</body>
+</html>

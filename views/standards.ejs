@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water Testing - Sources of Water Contamination</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    #chart-container-pie, #chart-container-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto; 
+      padding: 20px; 
+    }
+
+    #chart-container-pie {
+      max-width: 500px; 
+    }
+
+    #chart-container-bar {
+      max-width: 800px; 
+    }
+
+    #contaminationChart, #contaminationBarChart {
+      width: 100% !important; 
+      height: auto !important; 
+    }
+
+    .description-box {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #00a7cc;
+      border-radius: 10px;
+      background-color: #f0f8ff;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 class="site-title" style="font-size: 40px;">ECO AQUA</h1>
+    <nav>
+      <ul>
+        <li><a href="/">🏠 Home</a></li>
+        <li><a href="/sensors">🧪 Sensors</a></li>
+        <li class="dropdown">
+          <a href="/parameters">💧 Water Parameters</a>
+          <div class="dropdown-content">
+            <a href="/parameters">Drinking</a>
+            <a href="/parameters/turbidity">Agriculture</a>
+            <a href="/parameters/hardness">Construction</a>
+            <a href="/parameters/chlorine">Electricity</a>
+            <a href="/parameters/temperature">Domestic Usage</a>
+            <a href="/parameters/industry">Industry</a>
+          </div>
+        </li>
+        <li><a href="/standards">📊 Water Quality Standards</a></li>
+        <li><a href="/reports">📋 Water Quality Reports</a></li>
+        <li><a href="/about">ℹ About</a></li>
+        <li><a href="javascript:void(0);" onclick="confirmLogout()" class="logout-link">🚶‍♂️ Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h2 style="text-align: center; color:#00a7cc ;">Sources of Water Contamination</h2>
+
+  <div id="chart-container-pie">
+    <canvas id="contaminationChart"></canvas>
+  </div>
+  
+  <h2 style="text-align: center; color:#00a7cc">Contamination Levels Over Time</h2>
+  
+  <div id="chart-container-bar">
+    <canvas id="contaminationBarChart"></canvas>
+  </div>
+
+  <div class="description-box">
+    <p>Water contamination is caused by various human activities, impacting both ecosystems and human health. The pie chart displays the primary sources of contamination, including agriculture, sewage, industry, construction, and domestic activities. The bar chart illustrates the changes in contamination levels over recent years, highlighting trends and improvements in water quality management. Understanding these factors is essential for developing effective strategies to protect and improve our water resources.</p>
+  </div>
+
+  <script>
+    const ctxPie = document.getElementById('contaminationChart').getContext('2d');
+
+    const dataPie = {
+      labels: ['Agriculture', 'Sewage', 'Industry', 'Construction', 'Domestic'],
+      datasets: [{
+        label: 'Sources of Water Contamination',
+        data: [30, 25, 20, 15, 10], 
+        backgroundColor: [
+          'rgba(255, 0, 0, 1)', 
+          'rgba(0, 0, 255, 1)', 
+          'rgba(128, 0, 128, 1)', 
+          'rgba(255, 165, 0, 1)', 
+          'rgba(0, 100, 0, 1)'
+        ],
+        borderColor: [
+          'rgba(255, 0, 0, 1)', 
+          'rgba(0, 0, 255, 1)', 
+          'rgba(128, 0, 128, 1)', 
+          'rgba(255, 165, 0, 1)', 
+          'rgba(0, 100, 0, 1)'
+        ],
+        borderWidth: 1,
+        hoverOffset: 55
+      }]
+    };
+
+    const configPie = {
+      type: 'pie',
+      data: dataPie,
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: false, 
+          },
+          title: {
+            display: true,
+          }
+        },
+      }
+    };
+
+    const contaminationChart = new Chart(ctxPie, configPie);
+
+    const ctxBar = document.getElementById('contaminationBarChart').getContext('2d');
+
+    const dataBar = {
+      labels: ['2020', '2021', '2022'], 
+      datasets: [
+        {
+          label: 'Agriculture',
+          data: [30, 28, 25], 
+          backgroundColor: 'rgba(255, 0, 0, 0.8)', 
+          borderColor: 'rgba(255, 0, 0, 1)',
+          borderWidth: 1
+        },
+        {
+          label: 'Sewage',
+          data: [25, 23, 20],
+          backgroundColor: 'rgba(0, 0, 255, 0.8)', 
+          borderColor: 'rgba(0, 0, 255, 1)',
+          borderWidth: 1
+        },
+        {
+          label: 'Industry',
+          data: [20, 18, 15], 
+          backgroundColor: 'rgba(128, 0, 128, 0.8)', 
+          borderColor: 'rgba(128, 0, 128, 1)',
+          borderWidth: 1
+        },
+        {
+          label: 'Construction',
+          data: [15, 12, 10], 
+          backgroundColor: 'rgba(255, 165, 0, 0.8)', 
+          borderColor: 'rgba(255, 165, 0, 1)',
+          borderWidth: 1
+        },
+        {
+          label: 'Domestic',
+          data: [10, 8, 5], 
+          backgroundColor: 'rgba(0, 100, 0, 0.8)',  
+          borderColor: 'rgba(0, 100, 0, 1)',
+          borderWidth: 1
+        }
+      ]
+    };
+
+    const configBar = {
+      type: 'bar',
+      data: dataBar,
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: 'Year'
+            }
+          },
+          y: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'Contamination Level'
+            }
+          }
+        },
+        plugins: {
+          legend: {
+            display: true,
+            position: 'top'
+          },
+          title: {
+            display: true,
+          }
+        }
+      }
+    };
+
+    const contaminationBarChart = new Chart(ctxBar, configBar);
+
+  </script>
+
+  <footer>
+    <p>&copy; 2024 Water Testing Service. All rights reserved.</p>
+    <p>Contact us at <a href="mailto:info@watertesting.com">info@watertesting.com</a></p>
+  </footer>
+  <script>
+     function confirmLogout() {
+        const confirmAction = confirm("Are you sure you want to logout?");
+        if (confirmAction) {
+            window.location.href = "/logout";
+        }
+    }
+  </script>
+</body>
+</html>

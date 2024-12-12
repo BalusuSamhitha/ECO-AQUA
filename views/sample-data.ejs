@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample Data Collection</title>
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    .droplet-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 20px;
+    }
+
+    .droplet {
+      width: 200px;
+      height: 200px;
+      display: flex;
+      flex-direction: column; /* Make the text below the image */
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      border-radius: 50%; /* Make the container circular */
+      overflow: hidden; /* Hide overflow to maintain circular shape */
+      background-color: #e0f7fa; /* Background color for droplets */
+      position: relative; /* Position relative for text positioning */
+    }
+    .droplet:hover {
+      transform: scale(1.1);
+    }
+
+    .droplet img {
+      width: 80%; /* Adjust image size as needed */
+      height: auto;
+    }
+
+    .droplet-text {
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+      color: #004d99;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 class="site-title" style="font-size: 40px;">ECO AQUA</h1>
+    <nav>
+      <ul>
+        <li><a href="/">🏠 Home</a></li>
+        <li><a href="/sensors">🧪 Sensors</a></li>
+        <li class="dropdown">
+          <a href="/parameters">💧 Water Parameters</a>
+          <div class="dropdown-content">
+            <a href="/parameters">Drinking</a>
+            <a href="/parameters/turbidity">Agriculture</a>
+            <a href="/parameters/hardness">Construction</a>
+            <a href="/parameters/chlorine">Electricity</a>
+            <a href="/parameters/temperature">Domestic Usage</a>
+            <a href="/parameters/industry">Industry</a>
+          </div>
+        </li>
+        <li><a href="/standards">📊 Water Quality Standards</a></li>
+        <li><a href="/reports">📋 Water Quality Reports</a></li>
+        <li><a href="/about">ℹ️ About</a></li>
+        <li><a href="javascript:void(0);" onclick="confirmLogout()" class="logout-link">🚶‍♂️ Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <div class="droplet-container">
+      <!-- Aspect 1 -->
+      <div class="droplet" onclick="window.location.href='/test'">
+        <img src="https://tse1.mm.bing.net/th?id=OIP.gD35t5724I3hEuIysisHIAAAAA&pid=Api&P=0&h=180" alt="Aspect 1 Image">
+        <div class="droplet-text">Drinking</div>
+      </div>
+      <!-- Aspect 2 -->
+      <div class="droplet" onclick="window.location.href='/test'">
+        <img src="https://tse1.mm.bing.net/th?id=OIP.jRuguow50yYSFOEJryud4AHaHa&pid=Api&P=0&h=180" alt="Aspect 2 Image">
+        <div class="droplet-text">Agriculture</div>
+      </div>
+      <!-- Aspect 3 -->
+      <div class="droplet" onclick="window.location.href='/test'">
+        <img src="https://previews.123rf.com/images/solgas/solgas1901/solgas190100008/117977973-builder-with-trowel-vector-image-outline-for-coloring.jpg" alt="Aspect 3 Image">
+        <div class="droplet-text">Construction</div>
+      </div>
+    </div>
+    <div class="droplet-container">
+      <!-- Aspect 4 -->
+      <div class="droplet" onclick="window.location.href='/test'">
+        <img src="https://tse3.mm.bing.net/th?id=OIP.V8BRXCrSPgM7DCVgd-uJjQHaHa&pid=Api&P=0&h=180" alt="Aspect 4 Image">
+        <div class="droplet-text">Electricity</div>
+      </div>
+      <!-- Aspect 5 -->
+      <div class="droplet" onclick="window.location.href='/test'">
+        <img src="http://clipground.com/images/water-uses-clipart-17.gif" alt="Aspect 5 Image">
+        <div class="droplet-text">Domestic Use</div>
+      </div>
+      <!-- Aspect 6 -->
+      <div class="droplet" onclick="window.location.href='/test'">
+        <img src="https://tse2.mm.bing.net/th?id=OIP.5uUEkWL1YcggEwgDQz3CyAHaHa&pid=Api&P=0&h=180" alt="Aspect 6 Image">
+        <div class="droplet-text">Industry</div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Water Testing Service. All rights reserved.</p>
+    <p>Contact us at <a href="mailto:info@watertesting.com">info@watertesting.com</a></p>
+  </footer>
+  <script>
+     function confirmLogout() {
+        const confirmAction = confirm("Are you sure you want to logout?");
+        if (confirmAction) {
+            window.location.href = "/logout";
+        }
+    }
+  </script>
+</body>
+
+</html>

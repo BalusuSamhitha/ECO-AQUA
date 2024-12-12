@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water Testing - Sensors</title>
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px; /* Space between images */
+      padding: 20px;
+      justify-content: center; /* Center align the images */
+    }
+
+    .image-container {
+      width: 30%;
+      text-align: center;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: 200px; /* Fixed height for consistency */
+      object-fit: cover; /* Ensures images cover the container without distortion */
+      border-radius: 10px;
+      transition: transform 0.5s, box-shadow 0.2s;
+    }
+
+    .image-container img:hover {
+      transform: scale(1.05); /* Slightly scale up on hover */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .image-container p {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 class="site-title" style="font-size: 40px;">ECO AQUA</h1>
+    <nav>
+      <ul>
+        <li><a href="/">🏠 Home</a></li>
+        <li><a href="/sensors">🧪 Sensors</a></li>
+        <li class="dropdown">
+          <a href="/parameters">💧 Water Parameters</a>
+          <div class="dropdown-content">
+            <a href="/parameters">Drinking</a>
+            <a href="/parameters/turbidity">Agriculture</a>
+            <a href="/parameters/hardness">Construction</a>
+            <a href="/parameters/chlorine">Electricity</a>
+            <a href="/parameters/temperature">Domestic Usage</a>
+            <a href="/parameters/industry">Industry</a>
+          </div>
+        </li>
+        <li><a href="/standards">📊 Water Quality Standards</a></li>
+        <li><a href="/reports">📋 Water Quality Reports</a></li>
+        <li><a href="/about">ℹ️ About</a></li>
+        <li><a href="javascript:void(0);" onclick="confirmLogout()" class="logout-link">🚶‍♂️ Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2 style="font-size: 35px; text-align: center; color: #00a7cc ">Sensors</h2>
+    <div class="gallery">
+      <div class="image-container">
+        <a href="/sensors"><img src="https://www.makerlab-electronics.com/cdn/shop/products/3_daf1f376-26f2-4951-b7e9-2d582729fc5c.jpg?v=1679474133&width=1445" alt="EC Sensor"></a>
+        <p>EC SENSOR</p>
+      </div>
+      <div class="image-container">
+        <a href="/sensors"><img src="https://sensor365.ru/images/datasensing/SSP_0N-0E.jpg" alt="SSG"></a>
+        <p>SSG</p>
+      </div>
+      <div class="image-container">
+        <a href="/sensors"><img src="https://s.alicdn.com/@sc04/kf/HTB1NK0ppIuYBuNkSmRyq6AA3pXab.jpg_300x300.jpg" alt="Salinity Sensor"></a>
+        <p>SALINITY SENSOR</p>
+      </div>
+      <div class="image-container">
+        <a href="/sensors"><img src="https://let-elektronik.dk/cache/3/2/4/4/9/5/2/fit-600x600x100.webp" alt="ORP Sensor"></a>
+        <p>ORP SENSOR</p>
+      </div>
+      <div class="image-container">
+        <a href="/sensors"><img src="https://www.communica.co.za/cdn/shop/products/dfr-analog-tds-sensormeter-223322.jpg?v=1699485550" alt="TDS Sensor"></a>
+        <p>TDS SENSOR</p>
+      </div>
+      <div class="image-container">
+        <a href="/sensors"><img src="https://www.mgsuperlabs.com/media/image/51/6b/2e/0161dyE915oNSvIkn_600x600.jpg" alt="PH Sensor"></a>
+        <p>PH SENSOR</p>
+      </div>
+      <div class="image-container">
+        <a href="/sensors"><img src="https://m.media-amazon.com/images/I/51oxFf2LRjL._SL1024_.jpg" alt="Temperature Sensor"></a>
+        <p>TEMPERATURE SENSOR</p>
+      </div>
+      <div class="image-container">
+        <a href="/sensors"><img src="https://www.cnlabglassware.com/wp-content/uploads/elementor/thumbs/20200620100546-qfjijcerxo9xtso79akkf2lxnapcmz0z2hdg0csvfw.jpg" alt="Ammonium Sensor"></a>
+        <p>AMMONIUM SENSOR</p>
+      </div>
+      <div class="image-container">
+        <a href="/sensors"><img src="https://www.cnlabglassware.com/wp-content/uploads/elementor/thumbs/20200620100546-qfjijcerxo9xtso79akkf2lxnapcmz0z2hdg0csvfw.jpg" alt="Salinity Sensor"></a>
+        <p>SALINITY SENSOR</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Water Testing Service. All rights reserved.</p>
+    <p>Contact us at <a href="mailto:info@watertesting.com">info@watertesting.com</a></p>
+  </footer>
+  <script>
+     function confirmLogout() {
+        const confirmAction = confirm("Are you sure you want to logout?");
+        if (confirmAction) {
+            window.location.href = "/logout";
+        }
+    }
+  </script>
+</body>
+</html>
